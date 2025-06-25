@@ -1,0 +1,140 @@
+.warehouse-selector {
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+}
+
+.selector-container {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.selector-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.selector-section h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.selector-item {
+  background-color: var(--bg-primary);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.selector-item:hover {
+  background-color: var(--bg-hover);
+}
+
+.selector-item.selected {
+  border-color: var(--accent-color);
+  background-color: rgba(var(--accent-color-rgb), 0.1);
+  font-weight: bold;
+}
+
+.loading-indicator, 
+.placeholder-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  color: var(--text-secondary);
+  font-style: italic;
+  background-color: var(--bg-primary);
+  border-radius: 8px;
+}
+
+.selector-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.action-button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+}
+
+.action-button.reset {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.action-button.confirm {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.action-button.reset:hover {
+  background-color: var(--bg-hover);
+}
+
+.action-button.confirm:hover {
+  opacity: 0.9;
+}
+
+.action-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error-message {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .selector-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .selector-section {
+    width: 100%;
+  }
+  
+  .items-list {
+    max-height: 200px;
+  }
+} 
